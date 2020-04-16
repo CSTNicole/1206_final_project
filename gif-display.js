@@ -12,6 +12,7 @@ class GifDisplay {
     this.urls = [];
     this.index = 0;
     this.nextGif = document.createElement('img');
+    this.gifs = document.querySelectorAll('gif');
     fetch(url).then(this.onResponse).then(this.onJsonReady);
   }
   // TODO(you): Add methods as necessary.
