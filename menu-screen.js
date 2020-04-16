@@ -5,35 +5,30 @@
 
 // There is security around the JSON file online, and we have no key to access it. Thus, we copied the map into the file
 const songs  = {
-	  "cranes": {
-	    "songUrl": "https://yayinternet.github.io/hw4-music/songs/solange-cranes-kaytranada.mp3",
-	    "title": "Cranes in the Sky [KAYTRANADA Remix]",
-	    "artist": "Solange"
+	  "creep": {
+	    "songUrl": "songs/Creep (Lower Key - Piano Karaoke Instrumental) Radiohead.mp3",
+	    "title": "Creep",
+	    "artist": "Radiohead"
 	  },
-	  "timeless": {
-	    "songUrl": "https://yayinternet.github.io/hw4-music/songs/james-blake-timeless.mp3",
-	    "title": "Timeless",
-	    "artist": "James Blake"
+	  "fly": {
+	    "songUrl": "songs/Frank Sinatra - Fly Me To The Moon (Karaoke Piano) Key of G.mp3",
+	    "title": "Fly Me to the Moon",
+	    "artist": "Frank Sinatra"
 	  },
-	  "knock": {
-	    "songUrl": "https://yayinternet.github.io/hw4-music/songs/knockknock.mp4",
-	    "title": "Twice",
-	    "artist": "Knock Knock"
+	  "hallelujah": {
+	    "songUrl": "songs/Hallelujah (Acoustic Guitar Karaoke) Leonard Cohen.mp3",
+	    "title": "Hallelujah",
+	    "artist": "Leonard Cohen"
 	  },
-	  "deep": {
-	    "songUrl": "https://yayinternet.github.io/hw4-music/songs/janet-jackson-go-deep.mp3",
-	    "title": "Go Deep [Alesia Remix]",
-	    "artist": "Janet Jackson"
+	  "love": {
+	    "songUrl": "songs/Love Yourself (Lower Key - Acoustic Guitar Karaoke) Justin Bieber.mp3",
+	    "title": "Love Yourself",
+	    "artist": "Justin Bieber"
 	  },
-	  "discretion": {
-	    "songUrl": "https://yayinternet.github.io/hw4-music/songs/mitis-innocent-discretion.mp3",
-	    "title": "Innocent Discretion",
-	    "artist": "MitiS"
-	  },
-	  "spear": {
-	    "songUrl": "https://yayinternet.github.io/hw4-music/songs/toby-fox-spear-of-justice.mp3",
-	    "title": "Spear of Justice (ALMOST NO KICKS)",
-	    "artist": "Toby Fox"
+	  "delilah": {
+	    "songUrl": "songs/Plain White T's - Hey There Delilah (Karaoke Acoustic Guitar) HIGHER KEY.mp3",
+	    "title": "Hey There, Delilah",
+	    "artist": "Plain White T's"
 	  }
 	}
 
@@ -42,7 +37,7 @@ class MenuScreen {
   	this.containerElement = containerElement;
   	// TODO(you): Implement the constructor and add fields as necessary.
     
-	// console.log(songs.keys().length);
+	//console.log(songs.keys().length);
 	this.makeSongList();
 	this.makeThemes();
 
@@ -50,10 +45,7 @@ class MenuScreen {
 	// this.goButton.addEventListener('click', function(event) {
 	// });
 
-	this.goButton.addEventListener('click', this.onClick);
-
-	// Not on go button
-	// this.goButton.addEventListener('keyDown', this.go);
+	this.goButton.addEventListener('click', this.onClick)
 
 
   }
@@ -61,7 +53,7 @@ class MenuScreen {
 
   makeSongList() {
   	const selectContainer = document.getElementById("song-selector");
-  	// let songList = fetch('https://yayinternet.github.io/hw4-music/songs.json');
+  	let songList = fetch('https://github.com/CSTNicole/1206_final_project/tree/master/songs');
 		let songTitle = {};
 
 		for (const key in songs) {
@@ -87,7 +79,7 @@ class MenuScreen {
   }
 
   onClick (event) {
-  	event.preventDefault(); // Prevents default
+  	event.preventDefault();
 		let container = document.getElementById("query-input");
 
 		let theme = container.value;
@@ -108,7 +100,6 @@ class MenuScreen {
 	        new CustomEvent('buttonClicked', { detail: info }));
 		
 		app.menu.hide();
-
 		app.music.show();
   }
 
@@ -121,3 +112,4 @@ class MenuScreen {
   }
 
 }
+
