@@ -10,12 +10,16 @@
 class MusicScreen {
   constructor(containerElement) {
     this.containerElement = containerElement;
+    this.containerElement = containerElement;
+    this.theme;
+    this.song;
+    this.gif;
+    this.url;
     // TODO(you): Implement the constructor and add fields as necessary.
 
-    this.makeSongList();
-    this.makeThemes();
-    this.goButton = document.getElementById('go');
-    this.goButton.addEventListener('click', this.onClick);
+    this.aud = new AudioPlayer();
+    let play = new PlayButton();
+ 
 
   }
   // TODO(you): Add methods as necessary.
