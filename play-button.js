@@ -22,12 +22,12 @@ class PlayButton {
   }
 
   play() {
-    this.container.getElementsByClassName.backgroundImage = "url(images/play.png)";
+    this.container.style.backgroundImage = "url(images/pause.png)";
     app.music.aud.play();
   }
 
   pause() {
-    this.container.getElementsByClassName.backgroundImage = "url(images/pause.png)";
+    this.container.style.backgroundImage = "url(images/play.png)";
     app.music.aud.pause();
   }
 }
